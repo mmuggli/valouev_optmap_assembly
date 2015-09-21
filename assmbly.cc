@@ -8,6 +8,8 @@
 #include <algorithm>
 #include <math.h>
 #include <ext/hash_map>
+#include <assert.h>
+#include <string.h>
 
 using namespace std;
 using namespace __gnu_cxx;
@@ -264,7 +266,8 @@ int main(){
     //"./../datasets/rice/assm3/tmp/tmpmaps";
     // "./../datasets/rice/assm2/tmp/rice.contigs.133.maps";
     //"./../datasets/rice/rice_450Kb_15fr.maps";
-    "./../datasets/rice/rice_all.maps";
+    //"./../datasets/rice/rice_all.maps";
+      "sim_ecoli_XhoI_rev.valuev";
     //"./../datasets/ecoli/StuI/Ecoli_StuI.maps";
     //"./../datasets/pseudonana/tpnana_all.maps";
     // "./../datasets/pseudonana/test.maps";
@@ -286,7 +289,8 @@ int main(){
   const char* ovlp_filename = 
     //"./../datasets/human/mole_maps/mole_350Kb_15fr_new.ovlps";
     //"./../datasets/human/gm/lymph_12fr.ovlps";
-    "./../datasets/rice/rice_all_new.ovlps";
+      //"./../datasets/rice/rice_all_new.ovlps";
+      "sim_ecoli_XhoI_rev.ovlps.patched";
     //"./../datasets/rice/rice_450Kb_15fr_new.ovlps";
     //"./../datasets/ecoli/StuI/Ecoli_StuI.ovlps";
     //"./../datasets/pseudonana/tpnana_all_new.ovlps";
@@ -315,7 +319,8 @@ int main(){
   string comp_prefix = 
     //"./../datasets/human/mole_maps/assm4/mole.contigs";
     //"./../datasets/human/gm/lymph.contigs";
-    "./../datasets/rice/assm8/rice.contigs";
+      //"./../datasets/rice/assm8/rice.contigs";
+      "sim_ecoli_XhoI_rev.contigs";
     //"./../datasets/rice/assm3/tmp/rice.contigs";
     //"./../datasets/ecoli/StuI/assm1/contigs";
     //"./../datasets/pseudonana/assm4/tpnana.contigs";
@@ -331,7 +336,8 @@ int main(){
   //contig_str.open(contig_file_name);
 
   const char* skipped_maps_file_name = 
-    "./../datasets/rice/skipped_maps";
+      //"./../datasets/rice/skipped_maps";
+      "sim_ecoli_XhoI_rev.skipped";
   //"./../datasets/pseudonana/chimeras";
   ifstream skipped_maps_str;
   skipped_maps_str.open(skipped_maps_file_name);
@@ -448,9 +454,9 @@ int main(){
       orientation or1, or2;
       double s_score, t_score;      
 
-      cur_string_stream1>>map1_hash_key>>map2_hash_key;
-      cur_string_stream1>>map1>>map2>>map1_size>>map2_size;
-      cur_string_stream1>>or1>>or2>>s_score>>t_score;
+      cur_string_stream1 >> map1_hash_key >> map2_hash_key;
+      cur_string_stream1 >> map1 >> map2 >> map1_size >> map2_size;
+      cur_string_stream1 >> or1 >> or2 >> s_score >> t_score;
       istringstream cur_string_stream2;
       cur_string_stream2.str(line2);
 

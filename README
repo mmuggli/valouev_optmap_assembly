@@ -1,3 +1,15 @@
 This repository is for maintanance/enhancements to the software accompanying this publication:
 
 Anton Valouev, David C. Schwartz, Shiguo Zhou, and Michael S. Waterman. "An algorithm for assembly of ordered restriction maps from single DNA molecules"  October 24, 2006.  PNAS. no. 43 www.pnas.org/cgi/doi/10.1073/pnas.0604040103 vol. 103   
+
+
+This tool doesn't quite take the output of the aligner.  Two tools in the contrib directory help fill in the gaps.
+
+Compile with g++ assmbly.cc
+
+   $ valuev_optmap_assembly/contrib/gen_skipped.py sim_ecoli_XhoI_rev.valuev sim_ecoli_XhoI_rev.ovlps sim_ecoli_XhoI_rev.skipped
+   $ valuev_optmap_assembly/contrib/patchin_hash_keys.py sim_ecoli_XhoI_rev.valuev sim_ecoli_XhoI_rev.ovlps sim_ecoli_XhoI_rev.ovlps.patched
+   $ valuev_optmap_assembly/a.out 
+
+
+The tool is still asserting so there may be more gaps to fill yet.
