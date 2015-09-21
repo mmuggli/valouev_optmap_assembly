@@ -15,6 +15,7 @@ orientation rev(orientation _or){
 }
 
 string suffix(string str, int suff_size){
+    return str;
   assert(suff_size <= str.size());
   string res;
 
@@ -321,10 +322,10 @@ bool graph_component::chimeric_map2(int ind){
       int cur_neighbor = neighbors[i];
       if(!discovered_nodes[cur_neighbor]){ 
 	reached_all = false;
-	if(suffix(nodes[ind].read_name,suffix_length) == "4230_0_273"){
-	cerr<<"not reached: "<<suffix(nodes[cur_neighbor].read_name,suffix_length);
-	cerr<<" from: "<<suffix(nodes[cur_test_neighbor].read_name,suffix_length)<<endl;
-	}
+	// if(suffix(nodes[ind].read_name,suffix_length) == "4230_0_273"){
+	// cerr<<"not reached: "<<suffix(nodes[cur_neighbor].read_name,suffix_length);
+	// cerr<<" from: "<<suffix(nodes[cur_test_neighbor].read_name,suffix_length)<<endl;
+	// }
       }
     }
     if(reached_all) map_chimeric = false;
